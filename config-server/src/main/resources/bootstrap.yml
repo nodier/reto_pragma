@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/AndresFelipe11/microservices.git
+          username: ${USERGIT}
+          password: ${PASSWORDGIT}
+          default-label: main
+          search-paths: config-data
+  security:
+    user:
+      name: root
+      password: admin
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+appDescription: "Pragma Challenge"
+appVersion: "1.0.0"
